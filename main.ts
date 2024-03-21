@@ -70,6 +70,8 @@ app.get("/resolve-redirect-hls", async (c) => {
     headers: referer ? new Headers({ referer }) : undefined
   }).then((res) => res.text())
 
+  console.log(m3u8)
+
   const parsedManifest = Hls.parse(m3u8)
 
   if (parsedManifest.isMasterPlaylist)
